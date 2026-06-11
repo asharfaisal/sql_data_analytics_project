@@ -1,0 +1,79 @@
+/*
+===============================================================================
+Measures Exploration
+===============================================================================
+Purpose:
+    - To calculate aggregated metrics (e.g., totals, averages) for quick insights.
+    - To identify overall trends or spot anomalies.
+*/
+
+    -- find total sales
+    
+    select 
+    		SUM(sales) as total_revenue
+    from gold.fact_sales
+    
+    -- how many items are sold
+    
+    select 
+    		SUM(quantity) as Total_items_sold
+    from gold.fact_sales
+    
+    -- find the average selling price
+    
+    select 
+    		AVG(price) as avg_selling_price
+    from gold.fact_sales
+    
+    -- find total number of orders
+    
+    select 
+    	
+    		COUNT(distinct order_number)as total_orders
+    
+    from gold.fact_sales
+    
+    -- find total number of products
+    
+    select 
+    		count(product_name) as total_products
+    from gold.dim_products
+    
+    -- find total number of customers
+    
+    select 
+    		COUNT(distinct customer_id) as total_customers
+    from gold.dim_customers
+    
+    -- find the total number of customers that have placed an order
+    
+    select 
+    		COUNT(distinct customer_key) as total_customers
+    from gold.fact_sales
+
+
+                                                  -- combining all measures to generate a report
+
+select 'Total Revenue' as Measure_Name ,SUM(sales) as Measure_value  from gold.fact_sales
+
+UNION ALL
+
+select 'Total Items Sold' ,SUM(quantity) from gold.fact_sales
+
+UNION ALL
+
+select 'Avg Selling price' ,AVG(price) from gold.fact_sales
+
+UNION ALL
+
+select 'Total Orders' ,COUNT(distinct order_number) from gold.fact_sales
+
+UNION ALL
+
+select 'Total  Products' ,COUNT(product_name)  from gold.dim_products
+
+UNION ALL
+
+select 'Total Customer' as Measure_Name ,COUNT(distinct customer_id) as Measure_Value from gold.dim_customers
+
+
