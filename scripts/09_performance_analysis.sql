@@ -7,7 +7,7 @@ Purpose:
     - Analyze yearly sales performance for each product.
     - Compare product sales against its average yearly sales.
     - Identify year-over-year sales changes.
-/*
+*/
 
 with current_sales as
 (
