@@ -1,4 +1,5 @@
-﻿1,11000,AW00011000,Jon,Yang,Male,Australia,Married,1971-10-06,2025-10-06
+customer_key,customer_id,customer_number,first_name,last_name,gender,country,marital_status,birthdate,create_date
+1,11000,AW00011000,Jon,Yang,Male,Australia,Married,1971-10-06,2025-10-06
 2,11001,AW00011001,Eugene,Huang,Male,Australia,Single,1976-05-10,2025-10-06
 3,11002,AW00011002,Ruben,Torres,Male,Australia,Married,1971-02-09,2025-10-06
 4,11003,AW00011003,Christy,Zhu,Female,Australia,Single,1973-08-14,2025-10-06
